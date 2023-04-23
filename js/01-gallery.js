@@ -34,10 +34,13 @@ gallery.addEventListener("click", (e) => {
     `);
   instance.show();
 
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && instance.visible()) {
-      instance.close();
-      document.body.classList.remove("is-open");
-    }
-  });
+  window.addEventListener(
+    "keydown",
+    (event) => {
+      if (event.key === "Escape") {
+        instance.close();
+      }
+    },
+    { once: true }
+  );
 });
